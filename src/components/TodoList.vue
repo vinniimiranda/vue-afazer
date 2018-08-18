@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" class="todo-input" placeholder="What needs to be done" v-model="newTodo" @keyup.enter="addTodo">
+    <input type="text" class="todo-input" placeholder="Digite o que pretende fazer" v-model="newTodo" @keyup.enter="addTodo">
     <transition-group name="fade" enter-active-class="animated fadeInUp" leave-active-class="animated fadeOutDown">
     <div v-for="(todo, index) in todosFiltered" :key="todo.id" class="todo-item">
       <div class="todo-item-left">
@@ -16,20 +16,20 @@
 
     <div class="extra-container">
       <div><label><input type="checkbox" :checked="!anyRemaining" @change="checkAllTodos"> Check All</label></div>
-      <div>{{ remaining }} items left</div>
+      <div>{{ remaining }} itens restantes</div>
     </div>
 
     <div class="extra-container">
       <div>
         
-        <button :class="{ active: filter == 'all' }" @click="filter = 'all'">All</button>
-        <button :class="{ active: filter == 'active' }" @click="filter = 'active'">Active</button>
-        <button :class="{ active: filter == 'completed' }" @click="filter = 'completed'">Completed</button>
+        <button :class="{ active: filter == 'all' }" @click="filter = 'all'">Todos</button>
+        <button :class="{ active: filter == 'active' }" @click="filter = 'active'">Ativos</button>
+        <button :class="{ active: filter == 'completed' }" @click="filter = 'completed'">Completados</button>
       </div>
 
       <div>
         <transition name="fade">
-        <button v-if="showClearCompletedButton" @click="clearCompleted">Clear Completed</button>
+        <button v-if="showClearCompletedButton" @click="clearCompleted">Apagar completados</button>
         </transition>
       </div>
 
@@ -49,13 +49,13 @@ export default {
       todos: [
         {
           'id': 1,
-          'title': 'Finish Vue Screencast',
+          'title': 'Sistema Vue',
           'completed': false,
           'editing': false,
         },
         {
           'id': 2,
-          'title': 'Take over world',
+          'title': 'Sistema em Node',
           'completed': false,
           'editing': false,
         },
