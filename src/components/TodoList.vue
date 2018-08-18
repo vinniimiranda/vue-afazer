@@ -21,6 +21,7 @@
 
     <div class="extra-container">
       <div>
+        
         <button :class="{ active: filter == 'all' }" @click="filter = 'all'">All</button>
         <button :class="{ active: filter == 'active' }" @click="filter = 'active'">Active</button>
         <button :class="{ active: filter == 'completed' }" @click="filter = 'completed'">Completed</button>
@@ -191,18 +192,22 @@ export default {
     margin-bottom: 14px;
   }
   button {
-    font-size: 14px;
-    background-color: white;
-    appearance: none;
+    border-radius: 61px;
+    background-color: #23bfb1;
+    padding: 6px 15px 6px 15px;
+    color: #FFF;
+    border: none;
     &:hover {
-      background: lightgreen;
+      background-color: #00dac6;
+      box-shadow: 1px 1px 1.2px rgba(0,0,0,0.4);
     }
     &:focus {
       outline: none;
     }
   }
   .active {
-    background: lightgreen;
+    background-color: #088478;
+    box-shadow: 1px 1px 1.2px rgba(0,0,0,0.4);
   }
   // CSS Transitions
   .fade-enter-active, .fade-leave-active {
